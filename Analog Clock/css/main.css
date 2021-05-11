@@ -1,0 +1,200 @@
+:root {
+  --body-background-color: #FA8BFF;
+  --body-background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+
+
+  --input-background: linear-gradient(0deg, #333, #000);
+  --input-box-shadow: 0 0 0 4px #353535, 0 0px 5px #3e3e3e, inset 0 0 10px black, 0 5px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 0, 0, 0.2);
+
+  --input-before-background: linear-gradient(0deg, #000, #6b6b6b);
+  --input-before-box-shadow: 0 0 0 2px #232323;
+
+  --input-after-background: linear-gradient(0deg, #6b6b6b, #000);
+
+  --input-checked-background-color: #FA8BFF;
+  --input-checked-background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+
+  --input-checked-after-background-color: #FA8BFF;
+  --input-checked-after-background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+  --input-checked-after-box-shadow: 0 0 5px #FA8BFF, 0 0 15px #FA8BFF;
+
+  --clock-background-color: #fff;
+  --clock-border: 20px solid #fff;
+  --clock-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1), 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 0 4px #fff;
+
+  --clock-before-background-color: #848484;
+  --clock-before-border: 2px solid #fff;
+
+  --hh-before-background-color: #7a7d7d;
+  --mm-before-background-color: #ead2ac;
+  --ss-before-background-color: #ff5964;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+body {
+  background-color: var(--body-background-color);
+  background-image: var(--body-background-image);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+body .center {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+}
+
+body input[type='checkbox'] {
+  position: relative;
+  width: 90px;
+  height: 30px;
+  appearance: none;
+  outline: none;
+  border-radius: 30px;
+  background: var(--input-background);
+  box-shadow: var(--input-box-shadow);
+}
+
+body input[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 30px;
+  background: var(--input-before-background);
+  border-radius: 30px;
+  box-shadow: var(--input-before-box-shadow);
+  transform: scale(0.98, 0.96);
+  transition: 0.5s all;
+}
+
+body input[type='checkbox']::after {
+  content: '';
+  position: absolute;
+  top: 11.5px;
+  left: 45px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--input-after-background);
+  transition: 0.5s all;
+}
+
+body input:checked[type='checkbox'] {
+  background-color: var(--input-checked-background-color);
+  background-image: var(--input-checked-background-image);
+}
+
+body input:checked[type='checkbox']::before {
+  left: 30px;
+}
+
+body input:checked[type='checkbox']::after {
+  left: 40px;
+  background-color: var(--input-checked-after-background-color);
+  background-image: var(--input-checked-after-background-image);
+  box-shadow: var(--input-checked-after-box-shadow);
+}
+
+body .clock {
+  background-image: url(../clock.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--clock-background-color);
+  border: var(--clock-border);
+  box-shadow: var(--clock-box-shadow);
+}
+
+body .clock::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--clock-before-background-color);
+  border: var(--clock-before-border);
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+body .hour,
+body .minute,
+body .second {
+  position: absolute;
+}
+
+body .hour,
+body .hh {
+  width: 160px;
+  height: 160px;
+}
+
+body .minute,
+body .mm {
+  width: 190px;
+  height: 190px;
+}
+
+body .second,
+body .ss {
+  width: 230px;
+  height: 230px;
+}
+
+body .hh,
+body .mm,
+body .ss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+body .hh::before,
+body .ss::before,
+body .mm::before {
+  content: '';
+  position: absolute;
+  border-radius: 6px 6px 0 0;
+}
+
+body .hh::before {
+  width: 8px;
+  height: 65px;
+  background-color: var(--hh-before-background-color);
+  top: 15px;
+  z-index: 1;
+}
+
+body .mm::before {
+  width: 4px;
+  height: 90px;
+  background-color: var(--mm-before-background-color);
+  z-index: 2;
+  border-radius: 6px 6px 0 0;
+  top: 10px;
+}
+
+body .ss::before {
+  width: 2px;
+  height: 120px;
+  z-index: 3;
+  background-color: var(--ss-before-background-color);
+  border-radius: 6px 6px;
+  top: 20px;
+}

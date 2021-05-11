@@ -1,0 +1,38 @@
+:root {
+
+  --body-background-color: #000000;
+  --body-background-image: linear-gradient(45deg, #000000 16%, #2c3e50 50%, #333333 100%);
+
+
+
+  --input-background: linear-gradient(0deg, #333, #000);
+  --input-box-shadow: 0 0 0 4px #353535, 0 0px 5px #3e3e3e, inset 0 0 10px black, 0 5px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 0, 0, 0.2);
+
+  --input-before-background: linear-gradient(0deg, #000, #6b6b6b);
+  --input-before-box-shadow: 0 0 0 2px #232323;
+
+  --input-after-background: linear-gradient(0deg, #6b6b6b, #000);
+
+  --input-checked-background: linear-gradient(0deg, #b5fffc, #b5fffc);
+
+  --input-checked-after-background: #63cdff;
+  --input-checked-after-box-shadow: 0 0 5px #b5fffc, 0 0 15px #b5fffc;
+
+  --clock-background-color: #091921;
+  --clock-border: 20px solid #091921;
+  --clock-box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.05),
+    0 20px 20px rgba(255, 255, 255, 0.1),
+    0 0 0 4px #0a1a22;
+
+  /* 0 -15px -15px rgba(255, 255, 255, .05),
+  inset 0 -15px 15px rgba(255, 255, 255, .05),
+  0 15px 15px rgba(0, 0, 0, .3),
+  inset 0 15px 15px rgba(0, 0, 0, .3) */
+
+  --clock-before-background-color: #fff;
+  --clock-before-border: 2px solid #091921;
+
+  --hh-before-background-color: #ff105e;
+  --mm-before-background-color: #3792c0;
+  --ss-before-background-color: #fff;
+}
